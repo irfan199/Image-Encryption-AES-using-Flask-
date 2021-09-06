@@ -1,0 +1,96 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+
+<body><form action="/edit_staff_post" method="post" enctype="multipart/form-data"><table width="200" border="1" class="table table-info">
+  <tr>
+    <th scope="row">Name</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required value="{{ data['name'] }}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td>
+
+        {% if data['gender']=="male" %}
+             <input type="radio" name="radio" id="Gender" value="male"  checked/>
+      <label for="Gender">Male
+        <input type="radio" name="radio" id="Gender2" value="female"/>
+      Female</label>
+
+        {% endif %}
+
+     {% if data['gender']=="female" %}
+             <input type="radio" name="radio" id="Gender" value="male"  />
+      <label for="Gender">Male
+        <input type="radio" name="radio" id="Gender2" value="female" checked/>
+      Female</label>
+
+        {% endif %}
+
+
+       </td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required value="{{ data['place'] }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required value="{{ data['post'] }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" required pattern="[0-9]{6}" value="{{ data['pin'] }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">District</th>
+    <td><label for="select"></label>
+      <select name="select" id="select" >
+        <option value="calicut">calicut</option>
+           <option value="kasargod">kasargod</option>
+           <option value="kannur">kannur</option>
+           <option value="wayanad">wayanad</option>
+           <option value="malappuramalicut">malappuram</option>
+           <option value="palakkad">palakkad</option>
+           <option value="thrissur">thrissur</option>
+           <option value="ernakulam">ernakulam</option>
+           <option value="idukki">idukki</option>
+           <option value="alappuzha">alappuzha</option>
+           <option value="kottayam">kottayam</option>
+           <option value="pathanamthitta">pathanamthitta</option>
+           <option value="kollam">kollam</option>
+           <option value="thiruvananthapuram">thiruvananthapuram</option>
+
+      </select></td>
+  </tr>
+     <tr>
+    <th scope="row">Dob</th>
+    <td><label for="fileField"></label>
+      <input type="date" name="textfield7" value="{{ data['dob'] }}" id="textfield7" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Photo</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required value="{{ data['photo'] }}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" required readonly  value="{{ data['email'] }}"/></td>
+  </tr>
+  <tr>
+    <th height="33" scope="row">Phone</th>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" required pattern="[6789][0-9]{9}"  value="{{ data['phone_number'] }}" /></td>
+  </tr>
+  <tr>
+      <td></td>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Edit"  class="btn btn-success" /></th>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

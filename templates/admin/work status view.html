@@ -1,0 +1,19 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+
+<body><form action="" method="get"><table width="200" border="1"  class="table table-info">
+  <tr>
+    <th>Work Status</th>
+      <th>Date</th>
+
+
+  </tr>
+  <tr>
+
+     <td>{{ data["work_status"] }}</td>
+    <td>{{ data["date"] }}</td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

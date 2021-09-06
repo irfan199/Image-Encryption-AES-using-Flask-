@@ -1,0 +1,21 @@
+{% extends 'user/user_panel.html' %}
+{% block body %}
+
+<body><form action="/update_work_status_post" method="post"><table width="200" border="1"  class="table table-info">
+  <tr>
+    <th scope="row">Work</th>
+    <td>&nbsp;{{ data["work_assigned"] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">Work Status</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+  </tr>
+  <tr>
+      <td></td>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Ok" class="btn btn-success" /></th>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

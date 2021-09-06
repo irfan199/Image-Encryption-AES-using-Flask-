@@ -1,0 +1,27 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+<body><form action="" method="get"><table width="200" border="1"class="table table-info">
+  <tr>
+    <th scope="row">Sl No</th>
+     <th>Date</th>
+    <th>Staff Name</th>
+    <th>Work Assigned</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+   </tr>
+      {% for k in data %}
+
+  <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ k['date'] }}</td>
+      <td>{{ k['name'] }}</td>
+      <td>{{ k['work_assigned'] }}</td>
+      <td>{{ k['description'] }}</td>
+      <td><a href="/work_status_view/{{ k['work_id'] }}">View Status</a></td>
+  </tr>
+     {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

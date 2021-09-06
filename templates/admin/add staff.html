@@ -1,0 +1,83 @@
+{% extends 'admin/admin_panel.html' %}
+{% block body %}
+<form action="/add_staff_post" method="post" enctype="multipart/form-data">
+
+
+    <table  class="table table-info">
+  <tr>
+    <th scope="row">Name</th>
+    <td ><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required class="form-control" style="width: 200px; height: 25px"/>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td><input type="radio" name="radio" id="Gender" value="male" />
+      <label for="Gender">Male
+        <input type="radio" name="radio" id="Gender" value="female" />
+      Female</label></td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required class="form-control" style="width: 200px; height: 25px"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required class="form-control" style="width: 200px; height: 25px" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" class="form-control" required pattern="[0-9]{6}" style="width: 200px; height: 25px"/></td>
+  </tr>
+  <tr>
+    <th scope="row" >District</th>
+    <td><label for="select"></label>
+      <select  class="form-control" style="width: 200px; height: 27px" name="select" id="select">
+        <option value="calicut">Calicut</option>
+           <option value="kasargod">Kasargod</option>
+           <option value="kannur">Kannur</option>
+           <option value="wayanad">Wayanad</option>
+           <option value="malappuramalicut">Malappuram</option>
+           <option value="palakkad">Palakkad</option>
+           <option value="thrissur">Thrissur</option>
+           <option value="ernakulam">Ernakulam</option>
+           <option value="idukki">Idukki</option>
+           <option value="alappuzha">Alappuzha</option>
+           <option value="kottayam">Kottayam</option>
+           <option value="pathanamthitta">Pathanamthitta</option>
+           <option value="kollam">Kollam</option>
+           <option value="thiruvananthapuram">Thiruvananthapuram</option>
+
+      </select></td>
+  </tr>
+    <tr>
+    <th scope="row">Dob</th>
+    <td><label for="fileField"></label>
+      <input type="date" name="textfield7" id="textfield7" required class="form-control" style="width: 200px; height: 25px"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Photo</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required /></td>
+  </tr>
+
+  <tr>
+    <th scope="row">Email</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" required class="form-control" style="width: 200px; height: 25px"/></td>
+  </tr>
+  <tr>
+    <th height="33" scope="row">Phone</th>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6"  class="form-control" required pattern="[6,7,8,9][0-9]{9}" style="width: 200px; height: 25px"/></td>
+  </tr>
+  <tr>
+      <td></td>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Add"  class="btn btn-success" /></th>
+    </tr>
+</table>
+</form>
+{% endblock %}

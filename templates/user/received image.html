@@ -1,0 +1,23 @@
+{% extends 'user/user_panel.html' %}
+{% block body %}
+
+<body><form action="/sample_post" method="post"><table width="200" border="1" class="table table-info">
+  <tr>
+    <th scope="row">Sl No</th>
+    <td>Sender Name</td>
+{#    <td>Image</td>#}
+    <td>Date</td>
+  </tr>
+    {% for k in data %}
+  <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ k['name'] }}</td>
+{#      <td><img src="/static/images/{{ k['filename1'] }}" width="120" height="120"/> </td>#}
+      <td>{{ k['date'] }}</td>
+  <th colspan="2" scope="row"><a href="/decrypt/{{ k['image_id'] }}">Decode</a> </th>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}
